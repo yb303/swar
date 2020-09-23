@@ -35,10 +35,12 @@ Loops may be fully predicted, especially if BP caches are all working for the be
 These performance characteristics are the same for strlen and similar functions.
 
 ### Functions
-* memchr
+All functions come in a few variants:
+* memchr and memrchr
 * strlen
-* atoi, itoa, atod
-* 
+* atoi, htoi (hex string to int), atod
+* itoa
+* hasbyte - does word include a certain byte?
 
 ### Supported operating systems
 * Linux
