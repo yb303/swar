@@ -1,4 +1,4 @@
-#include "swar.h"
+#include "../swar.h"
 
 #include <string.h>
 #include <stdlib.h>

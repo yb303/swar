@@ -1,6 +1,6 @@
+#include "../swar.h"
 #include <stdlib.h>
 #include <gtest/gtest.h>
-#include "swar.h"
 #include <limits>
 
 
