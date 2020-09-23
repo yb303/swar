@@ -25,7 +25,9 @@ Comparison of various atoi implementations (actually a-to-ull) on my home machin
 <img src="https://lh3.googleusercontent.com/KeHaQM5RM2_hS6Gf8MEtRlV4EgVwnJBqLnxMinczB67XUaR8wXyriYNrqY4ukYBE0aGNQ4TDA31f1MIP57j4r78zmeYk3OAqFySu2yfHQClDhxMnm86ACtUVI6EQSGX7aF0HgTYD3Cg=w2400"><br>
 Machine and env spec: i5-3470, Cygwin on Windows 10 64 bit, g++ 9.3.0
 
-Functions with 8, or 4, suffix are branchless. Functions with longer input must have a branch per word.<br>
+You can see how SWAR is faster than the naive impl and is fixed cost per word. The stock implementation is surprisingly slow. I don't know why as I didn't read its code yet.
+
+Functions with 8, or 4, suffix are branchless and faster (see *swar8* vs *swar*). Functions with longer input must have a branch per word.<br>
 An SSE implementation can follow the same ideas as here for longer inputs. However, using SSE instruction may switch some processors to a different P-state, if the BIOS allows, and the switching itself can take a few hundred cycles.
 
 Branchless code is not always faster than branched code.<br>
