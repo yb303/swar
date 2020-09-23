@@ -10,10 +10,11 @@ Performace of atoi implementations (actually a-to-ull)
 The limiting factor here is the multiplication. You can see how the naive impl is climbing at fixed rate as it multiplies once per digit, while the SWAR is doing less multiplications.
 The stock atoll is teribly slow and I did not yet read the code to see why.
 
-<img src="https://drive.google.com/file/d/1XhfXByPBCuf673qrZriowbQhHNJnQKOv/view?usp=sharing" title="atoi performance" alt="atoi performance">
+<img src="https://drive.google.com/file/d/1XhfXByPBCuf673qrZriowbQhHNJnQKOv/preview" title="atoi performance" alt="atoi performance">
 
 And zoomed into small numbers
-<img src="https://drive.google.com/file/d/1AbL6g9tPEcCTV4pHR4R-LT-E8eWHJ8Mn/view?usp=sharing" title="atoi performance" alt="atoi performance">
+
+<img src="https://drive.google.com/file/d/1AbL6g9tPEcCTV4pHR4R-LT-E8eWHJ8Mn/preview" title="atoi performance" alt="atoi performance">
 
 
 
