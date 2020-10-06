@@ -114,7 +114,7 @@ inline uint32_t _trim8(const char* s, uint8_t c) {
     uint64_t a = 0x7f7f7f7f7f7f7f7full;
 
     // set the high bit in non-zero bytes
-    if constexpr (Printable) {
+    if (Printable) {
         x += a;
     }
     else {
@@ -130,10 +130,10 @@ inline uint32_t _trim8(const char* s, uint8_t c) {
     // set all bits under the lowest high bit
     x &= x - 1u;
 
-    if constexpr (!Exists) {
+    if (!Exists) {
         x >>= 7;
     }
-    else if constexpr (Printable) {
+    else if (Printable) {
         // complete the killed high bit
         x <<= 1u;
         x |= 1u;
@@ -536,10 +536,10 @@ inline uint64_t _utoap(uint64_t x, char* s) {
 // Convert uint to %0<N>u, N <= 20
 template <int N>
 inline char* utoap(uint64_t x, char* s) {
-    if constexpr(N <= 8) {
+    if constexpr (N <= 8) {
         _utoap<N>(x, s);
     }
-    else if constexpr(N <= 16) {
+    else if constexpr (N <= 16) {
         x = _utoap<N - 8>(x, s + 8);
         x /= (N & 1) ? 10 : 100;
         _utoap<8>(x, s);

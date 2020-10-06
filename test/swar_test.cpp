@@ -245,6 +245,9 @@ TEST(r8, itoa) {
     EXPECT_STREQ(swar::utoap<14>(0, itoa_ret), "00000000000000");
     EXPECT_STREQ(swar::utoap<15>(0, itoa_ret), "000000000000000");
     EXPECT_STREQ(swar::utoap<16>(0, itoa_ret), "0000000000000000");
+    EXPECT_STREQ(swar::utoap<17>(0, itoa_ret), "00000000000000000");
+    EXPECT_STREQ(swar::utoap<18>(0, itoa_ret), "000000000000000000");
+    EXPECT_STREQ(swar::utoap<19>(0, itoa_ret), "0000000000000000000");
 
     EXPECT_STREQ(swar::utoap< 0>(7,               itoa_ret), "");
     EXPECT_STREQ(swar::utoap< 1>(7,               itoa_ret), "7");

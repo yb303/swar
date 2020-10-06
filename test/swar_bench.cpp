@@ -36,9 +36,6 @@ int main(int argc, char* argv[]) {
     (void)argc;
     (void)argv;
 
-    // The default input filename is executable full path but with .txt
-    std::string filename = std::string(argv[0]) + ".txt";
-
     int test_size = 10000;
     int test_repetitions = 10;
 
@@ -71,6 +68,7 @@ int main(int argc, char* argv[]) {
     std::vector<uint64_t> dt_stock(21);
     std::vector<uint64_t> dt_naive(21);
     std::vector<uint64_t> dt_swar_(21);
+    std::vector<uint64_t> dt_swarX(21);
     std::vector<uint64_t> dt_swar8(21);
     std::vector<uint64_t> dt_swar4(21);
 
@@ -111,8 +109,8 @@ int main(int argc, char* argv[]) {
             }
 
             // Test swar atou8
-            int len8 = len <= 8 ? len : 8;
             uint64_t t4 = rdtsc();
+            int len8 = len <= 8 ? len : 8;
             total_len = 0;
             for (int i = 0; i < test_size; i++ ) {
                 junk += swar::atou8(buf + total_len, len8);
@@ -120,8 +118,8 @@ int main(int argc, char* argv[]) {
             }
 
             // Test swar atou4
-            int len4 = len <= 4 ? len : 4;
             uint64_t t5 = rdtsc();
+            int len4 = len <= 4 ? len : 4;
             total_len = 0;
             for (int i = 0; i < test_size; i++ ) {
                 junk += swar::atou4(buf + total_len, len4);
